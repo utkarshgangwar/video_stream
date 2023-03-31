@@ -17,7 +17,7 @@ app.get('/video/:filename', (req, res) => {
   const path = `uploads/${filename}`;
   const stat = fs.statSync(path);
   const fileSize = stat.size;
-  const range = req.headers.range;
+  const range = req.headers.range; 
 
   if (range) {
     const parts = range.replace(/bytes=/, '').split('-');
